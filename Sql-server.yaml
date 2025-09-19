@@ -1,0 +1,13 @@
+services:
+  mssql:
+    container_name: mssqlserver
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports: 
+      - 1433:1433
+    volumes: 
+      - c:/mssql/data:/var/opt/mssql/data
+      - c:/mssql/log:/var/opt/mssql/log
+      - c:/mssql/secrets:/var/opt/mssql/secrets
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Temp@123
